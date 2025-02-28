@@ -3,62 +3,77 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import MenuIcon from '@mui/icons-material/Menu';
-import TheLogo from '../../assets/amazon-dark.svg';
+import classes from './Header.module.css';
+import HeaderUnder from './HeaderUnder';
+
+
 
 const Header = () => {
   return (
-    <div className="headerWrapper">
+    <>
+    <div className={classes.headerWrapper}>
       {/* Amazon Logo */}
-      <div className="imageAmazon">
-        <img src={TheLogo} alt="Amazon Logo" />
+      <div className={classes.imageAmazon}>
+      <a href="/">      
+      <img src='https://pngimg.com/uploads/amazon/amazon_PNG11.png' alt="Amazon Logo" />
+      </a>
       </div>
 
       {/* Delivery Location */}
-      <div className="delivery">
+      <div className={classes.delivery}>
         <LocationOnIcon />
-        <div className="deliverEthiopia">
-          <p>Deliver to <span>Ethiopia</span></p>
+        <div className={classes.deliverEthiopia}>
+          <p>Deliver to</p>
+            <span> Ethiopia</span>
         </div>
       </div>
 
       {/* Search Bar */}
-      <div className="SearchaBar">
-        <div className="all">
-          All <ArrowDropDownIcon />
+      <div className={classes.SearchaBar}>
+        <select name="" id="">
+          <option value=""> All</option>
+           </select>
+           <input type="text" placeholder="Search Amazon"  />
+            <span> <SearchIcon /></span>
+      </div>
+
+     
+      <div className={classes.order_wrapper}>
+         <div className={classes.lang}>
+          
+          <img src="../../assets/image.png" alt="" />
+          
+          <p>EN</p>
+          <span><ArrowDropDownIcon /></span> 
+      
         </div>
-        <div className="searchInput">
-          <input type="text" placeholder="Search Amazon" />
-          <SearchIcon />
-        </div>
-      </div>
+        {/* Account & Orders */}
+        <a href='#' className={classes.account}>
+          <p>Hello, sign in</p>
+          <select name="" id="">
+            <option value="">Account & Lists</option>
+          </select>
+        </a>
 
-      {/* Language Selector */}
-      <div className="lang">
-        EN <ArrowDropDownIcon />
-      </div>
+        {/* Returns & Orders */}
+        <a href='#'
+        className={classes.returns}>
+          <p>Returns</p> 
+          <span> & Orders  </span>
+        </a>
 
-      {/* Account & Orders */}
-      <div className="account">
-        <p>Hello, sign in</p>
-        <span>Account & Lists <ArrowDropDownIcon /></span>
-      </div>
+        <a href='#' className={classes.cart}>
+          <AddShoppingCartIcon  size={100}/>
+          <p>Cart</p>
+          <span>0</span>
+        </a>
 
-      {/* Returns & Orders */}
-      <div className="returns">
-        Returns <span>& Orders</span>
-      </div>
-
-      {/* Cart */}
-      <div className="cart">
-        <AddShoppingCartIcon />
-      </div>
-
-      {/* Mobile Menu Icon */}
-      <div className="menuIcon">
-        <MenuIcon />
       </div>
     </div>
+          <HeaderUnder />
+
+    </>
+    
   );
 };
 

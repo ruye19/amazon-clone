@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.headerWrapper{
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 10vh;
+    align-items: center;
+   
+  
+}
+.imageAmazon img{
+    width: 100px;
+    margin-left: 12px;
+    margin: 23px;
+    padding-top: 10px ;
+    
+}
+.delivery{
+    display: flex;
+    font-size: 15px;
+    color: rgb(219, 217, 217);
+    font-size: 12px;
+}
+.delivery span{
+    font-weight: 600;
+    color: white;
+    font-size: 17px; 
+}
+.SearchaBar{
+    display: flex;
+    height: 45px;
+    border-radius: none;
+    padding:20px;
+    }
+.SearchaBar select{
+    padding-inline: 5px;
+    border: none;
+    color: black; 
+    background-color: rgb(228, 220, 220);
+}
+.SearchaBar span{
+    background-color: rgb(233, 198, 134);
+    color: black;
+    height:45px ;
+    justify-content: center;
+    padding-inline: 8px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+
+}
+.SearchaBar input{
+    width: 500px;
+    margin: 0px;
+}
+.order_wrapper{
+    display: flex;
+    width: 450px;
+    height: 10vh;
+    /* align-items: center; */
+
+}
+.order_wrapper a{
+    color: white;
+    text-decoration: none;
+    margin: 0px 20px;
+    padding-top: 18px ;
+    font-size: 14px;
+
+}
+.lang{
+    display: flex;
+    align-items: center;
+}
+.lang img{
+    width: 20px;
+    margin: 0px 5px;
+}
+
+.account  span, .returns span{
+    font-weight: bolder;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.account  p, .returns p {
+    color: rgb(215, 211, 211);
+}
+
+.account select{
+    border: none;
+    color:white;
+    background-color: black;
+    font-weight: bolder;
+}
+.cart span{
+    position:absolute;
+    font-weight: bold;
+    top: 10px;
+    left: 96.5%;
+    font-size: 17px;
+    background-color: #1a1a1a;
+    color: rgb(217, 165, 98);
+}
+.cart p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.cart hover, .order_wrapper a:hover , .lang:hover , .account:hover , .returns:hover{
+    border: 1px solid white;
+   border-radius: 3px;
+}
+
+.headerUnder ul{
+    display: flex;
+    background-color: #232f3e;
+    color: white;
+    height: 5vh;
+    align-items: center;
+    list-style: none;
+
+
+}
+.headerUnder a{
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.headerUnder ul li:first-child{
+  display: inline-flex;  
+  gap: 2px;
+  align-items: center;
+  padding-left: 7px;
+}
+.headerUnder ul li:hover{
+    border: 2px solid white;
+}
+.headerUnder ul li:first-child:hover{
+    border: none;
+}
