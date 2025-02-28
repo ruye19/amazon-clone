@@ -1,4 +1,5 @@
 
+
 # Amazon Clone Project
 
 This is a full-stack Amazon clone project built using React for the front end and Node.js/Express for the back end. The project aims to replicate the core functionalities of the Amazon website, including user authentication, product listings, shopping cart, and order management.
