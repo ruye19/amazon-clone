@@ -8,8 +8,8 @@
     color: white;
     height: 11vh;
     align-items: center;
-   
-  
+   width: 100%;  
+   overflow: hidden;
 }
 .imageAmazon img{
     width: 100px;
@@ -143,10 +143,17 @@
         display: flex;
         flex-direction: column;
         /* justify-content: space-between; */
-        height: auto;
+        height: 20vh;
         overflow: hidden;
         align-items: center;
 
+    }
+    .imageAmazon img{
+        width: 100px;
+        margin: 0px;
+        padding: 0px;
+        padding-top: 10px;
+        
     }
     .order_wrapper{
         display: flex;
@@ -159,7 +166,7 @@
     }
 
     .SearchaBar{
-        width: 100%;
+        width: 50%;
     }
     .headerUnder ul li:not(:first-child){
         display: none;

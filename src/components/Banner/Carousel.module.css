@@ -9,3 +9,13 @@
     position: absolute;
     bottom: 0px;
 }
+@media  screen and (max-width: 768px){
+    .bannerFade::before{
+        height: 25vh;
+    }
+    .cimg img{
+        height: 60vh;
+    }
+
+    
+}

@@ -1,12 +1,13 @@
 import CatagorySlice   from './CatagorySlice'
 import CatagoryinfoList from './CatagoryinfoLIst'
-
-
+import classes from './Catagory.module.css'
 const Catagory = () => {
   return (
-     <div className="catagoryWrapper">
+     <div className={classes.catagoryWrapper}>
+        
         {CatagoryinfoList.map((datas, key) => (
-            <CatagorySlice key={key} data={datas} />
+           
+           <CatagorySlice key={key} data={datas} />
         ))}
      </div>
     )

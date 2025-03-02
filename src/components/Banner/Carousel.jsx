@@ -6,7 +6,7 @@ import classes from './Carousel.module.css'
 
 const bannerItem = () => {
   return (
-    <div>
+    <>
       <Carousel
       autoPlay={true}
       infiniteLoop={true}
@@ -15,7 +15,7 @@ const bannerItem = () => {
 >
 
         {DataImage.map((item, index) => (
-          <div key={index}>
+          <div className={classes.cimg} key={index}>
             <img src={item} alt='banner' />
           </div>
         ))}
@@ -24,7 +24,7 @@ const bannerItem = () => {
       </Carousel>
       <div className={classes.bannerFade}>
       </div>
-    </div>
+      </>
   )
 }
 
