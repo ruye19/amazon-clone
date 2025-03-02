@@ -6,7 +6,7 @@
     display: flex;
     background-color: black;
     color: white;
-    height: 10vh;
+    height: 11vh;
     align-items: center;
    
   
@@ -79,16 +79,10 @@
     margin: 0px 5px;
 }
 
-.account  span, .returns span{
-    font-weight: bolder;
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
+
 .account  p, .returns p {
     color: rgb(215, 211, 211);
+    font-size: 13px;
 }
 
 .account select{
@@ -110,7 +104,7 @@
     font-size: 16px;
     font-weight: bold;
 }
-.cart hover, .order_wrapper a:hover , .lang:hover , .account:hover , .returns:hover{
+.cart:hover, .order_wrapper a:hover , .lang:hover , .account:hover , .returns:hover{
     border: 1px solid white;
    border-radius: 3px;
 }
@@ -119,7 +113,7 @@
     display: flex;
     background-color: #232f3e;
     color: white;
-    height: 5vh;
+    height: 6vh;
     align-items: center;
     list-style: none;
 
@@ -144,3 +138,35 @@
 .headerUnder ul li:first-child:hover{
     border: none;
 }
+@media screen and (max-width:768px){
+    .headerWrapper{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        height: auto;
+        overflow: hidden;
+        align-items: center;
+
+    }
+    .order_wrapper{
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+    }
+    .delivery{
+        display: none;
+    }
+
+    .SearchaBar{
+        width: 100%;
+    }
+    .headerUnder ul li:not(:first-child){
+        display: none;
+    }
+    .cart span{
+        display: none;
+    }
+
+}
+

@@ -5,6 +5,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import classes from './Header.module.css';
 import HeaderUnder from './HeaderUnder';
+import flagg from '../../assets/image.png'
 
 
 
@@ -34,14 +35,14 @@ const Header = () => {
           <option value=""> All</option>
            </select>
            <input type="text" placeholder="Search Amazon"  />
-            <span> <SearchIcon /></span>
+            <span> <SearchIcon style={{ fontSize: 35 }} /></span>
       </div>
 
      
       <div className={classes.order_wrapper}>
          <div className={classes.lang}>
           
-          <img src="../../assets/image.png" alt="" />
+          <img src={flagg} alt="flag" />
           
           <p>EN</p>
           <span><ArrowDropDownIcon /></span> 
