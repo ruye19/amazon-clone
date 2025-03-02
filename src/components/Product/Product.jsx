@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import clases from './Product.module.css'
+import classes from './Product.module.css'
 import FormatCurrency from '../FormatCurrency/FormatCurrency'
 import { useState } from 'react'
 import axios from 'axios'
 import ProductSlice from './ProductSlice'
+import { Class } from '@mui/icons-material'
 
 const Product = () => {
     const [product, setProduct] = useState([])
@@ -23,14 +24,13 @@ const Product = () => {
 
   return (
     
-      <div>
+      <div className={classes.productWrapper}>
         {product.length > 0 ? (
       product.map((productt) => (
         <ProductSlice key={productt.id} product={productt} />
       ))
     ) : (
-      <p>Loading products...</p> // Show a loading message while fetching
-    )}
+      <p>Loading products...</p> )}
       </div>
    
   )
