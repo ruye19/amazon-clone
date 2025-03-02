@@ -1,9 +1,10 @@
 .catagorySlice {
     height: 300px;
-    width: 240px;
+    width: 280px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+
 }
 .catagorySlice img{
     width: 100%;
@@ -29,14 +30,15 @@
 .catagoryWrapper{
   display: grid;
   position: relative;
-  margin-top:-4% ;
+  margin-top:-10% ;
   grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     place-items: center;
+    padding: 20px;  
 }
 @media screen and (max-width:768px) {
     .catagoryWrapper{
         grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 12px;
+        
     }
 }

@@ -7,7 +7,7 @@ const catagoryInfoList = [
   },
   {
     id: 2,
-    title: " HD Ready Smart LED Fire TV",
+    title: "TV",
     image: "https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1694154515879-819Lw2PE8tL._SL1500_.jpg",
   },
   {
