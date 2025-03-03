@@ -4,7 +4,6 @@ import FormatCurrency from '../FormatCurrency/FormatCurrency'
 import { useState } from 'react'
 import axios from 'axios'
 import ProductSlice from './ProductSlice'
-import { Class } from '@mui/icons-material'
 
 const Product = () => {
     const [product, setProduct] = useState([])

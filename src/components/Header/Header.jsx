@@ -1,5 +1,5 @@
 import React from 'react';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -45,7 +45,7 @@ const Header = () => {
           <img src={flagg} alt="flag" />
           
           <p>EN</p>
-          <span><ArrowDropDownIcon /></span> 
+          {/* <span><ArrowDropDownIcon /></span>  */}
       
         </div>
         {/* Account & Orders */}
