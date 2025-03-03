@@ -1,11 +1,12 @@
 import React from 'react';
-// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import classes from './Header.module.css';
 import HeaderUnder from './HeaderUnder';
 import flagg from '../../assets/image.png'
+import { Link } from 'react-router';
 
 
 
@@ -15,9 +16,9 @@ const Header = () => {
     <div className={classes.headerWrapper}>
       {/* Amazon Logo */}
       <div className={classes.imageAmazon}>
-      <a href="/">      
+      <Link  to ="/">      
       <img src='https://pngimg.com/uploads/amazon/amazon_PNG11.png' alt="Amazon Logo" />
-      </a>
+      </Link>
       </div>
 
       {/* Delivery Location */}
@@ -45,29 +46,29 @@ const Header = () => {
           <img src={flagg} alt="flag" />
           
           <p>EN</p>
-          {/* <span><ArrowDropDownIcon /></span>  */}
+          <span><ArrowDropDownIcon /></span> 
       
         </div>
         {/* Account & Orders */}
-        <a href='#' className={classes.account}>
+        <Link  to ='/auth' className={classes.account}>
           <p>Hello, sign in</p>
           <select name="" id="">
             <option value="">Account & Lists</option>
           </select>
-        </a>
+        </Link>
 
         {/* Returns & Orders */}
-        <a href='#'
+        <Link  to ='/order'
         className={classes.returns}>
           <p>Returns</p> 
           <span> & Orders  </span>
-        </a>
+        </Link>
 
-        <a href='#' className={classes.cart}>
+        <Link  to ='/cart' className={classes.cart}>
           <AddShoppingCartIcon  size={100}/>
           <p>Cart</p>
           <span>0</span>
-        </a>
+        </Link>
 
       </div>
     </div>
