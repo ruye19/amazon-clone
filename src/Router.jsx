@@ -7,6 +7,7 @@ import SignUp from './Pages/Auth/SignUp'
 import Payment from './Pages/Payment/Payment'
 import Orders from './Pages/Orders/Orders'
 import Cart from './Pages/Cart/Cart'
+import Result from './Pages/Results/Result'
 const Router = () => {
   return (
     <BrowserRouter>
@@ -14,8 +15,10 @@ const Router = () => {
     <Route path='/' element={<Landing />} />
     <Route path='/auth' element={<SignUp />} />
     <Route path='/payment' element={<Payment />} />
+
     <Route path='/order' element={<Orders />} />
     <Route path='/cart' element={<Cart />} />
+    <Route path='/catagory/:catagoryName' element={<Result/>} />
       
 
     </Routes>

@@ -17,7 +17,8 @@ const catagoryInfoList = [
   },
   {
     id: 4,
-    title: "Gaming",
+    title: "electronic",
+    data:'abee askndvoasjd voadncjasndvji', title:'jvns idjraievjfv',
     image: "https://img.global.news.samsung.com/global/wp-content/uploads/2024/01/Gaming-Hub-Partner-Accessory-Program_main1.jpg",
   },
   
