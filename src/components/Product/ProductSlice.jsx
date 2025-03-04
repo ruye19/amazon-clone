@@ -1,37 +1,42 @@
-import React from 'react'
-// import  Rating  from '@mui/material/Rating'
-import FormatCurrency from '../FormatCurrency/FormatCurrency'
-import { Link, useParams } from 'react-router-dom'
-import classes from './Product.module.css'
-function ProductSlice({product}) {
-    const data = product
+import React from "react";
+import FormatCurrency from "../FormatCurrency/FormatCurrency";
+import { Link } from "react-router-dom";
+import classes from "./Product.module.css";
+
+function ProductSlice({ product, flex }) {
   return (
-    <div className={classes.productSlice}>
-      <Link className={classes.imageProduct} to={`/products/${data.id}?title=${encodeURIComponent(product.title)}`}>
-  {data.images && data.images.length > 0 ? (
-    <img src={data.images[0]} alt="productImage" />
-  ) : (
-    <p>No image available</p> // Fallback text or image
-  )}
-</Link>
+    <div className={`${classes.productSlice} ${flex ? classes.productDetail : ""}`}>
+      {/* Product Image */}
+      <Link className={classes.imageProduct} to={`/products/${product.id}?title=${encodeURIComponent(product.title)}`}>
+        {product.images && product.images.length > 0 ? (
+          <img src={product.images[0]} alt="productImage" />
+        ) : (
+          <p>No image available</p> // Fallback text
+        )}
+      </Link>
 
+      {/* Product Info */}
       <div className={classes.productInfo}>
-        <p>{data.title}</p>
-        {/* <div className={classes.rating}>
-            <Rating value={data.rating.rate} precision={0.2}></Rating>
-             <p>{data.rating.count}</p>
-        </div> */}
-        <div className={classes.price}> 
-        <FormatCurrency amount={data.price} />
+        <h3>{product.title}</h3>
 
+        {/* Show Description ONLY when `flex` is true */}
+        <p className={`${classes.description} ${flex ? classes.show : ""}`}>
+          {product.description}
+        </p>
+
+        <div className={classes.price}>
+          <FormatCurrency amount={product.price} />
         </div>
-      </div>
-      <button className={classes.addCart}>
-        add to card
-      </button>
 
+        {/* Button changes based on flex */}
+        {flex ? (
+          <button className={classes.buyNow}>Buy Now</button>
+        ) : (
+          <button className={classes.addCart}>Add to Cart</button>
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
-export default ProductSlice
+export default ProductSlice;

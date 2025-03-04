@@ -39,15 +39,15 @@ const ProductDetail = () => {
       isLoading ? (<Loading/>) :
       <div>
 
-        <p style={{ padding: '30px' , fontSize: '20px', color:'orange'}}>Product / {productTitle }</p>
-        <hr />
+<p style={{ padding: '30px' , fontSize: '20px', color:'orange'}}> {productTitle }</p>
+<hr />
        
         <div className={classes.product_container}>
       
 
           {
           productState ? (
-            <ProductSlice product={productState} />
+            <ProductSlice product={productState} flex={true}/>
           ) : (
             <p>Loading...</p>
           )
