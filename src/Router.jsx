@@ -8,6 +8,7 @@ import Payment from './Pages/Payment/Payment'
 import Orders from './Pages/Orders/Orders'
 import Cart from './Pages/Cart/Cart'
 import Result from './Pages/Results/Result'
+import ProductDetail from './Pages/ProductDetail/ProductDetail'
 const Router = () => {
   return (
     <BrowserRouter>
@@ -18,8 +19,8 @@ const Router = () => {
 
     <Route path='/order' element={<Orders />} />
     <Route path='/cart' element={<Cart />} />
-    <Route path='/catagory/:catagoryName' element={<Result/>} />
-      
+    <Route path='/categories/:catagoryid' element={<Result/>} />
+      <Route path='/products/:productid' element={<ProductDetail/>}/>
 
     </Routes>
     </BrowserRouter>
