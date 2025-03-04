@@ -5,6 +5,7 @@ import axios from 'axios'
 import { productUrl } from '../../API/endPoint'
 import classes from './Result.module.css'
 import ProductSlice from '../../components/Product/ProductSlice'
+import Loading from '../../components/Loading/Loading'
 
 const Result = () => {
   const location = useLocation(); // Get location object
@@ -13,6 +14,7 @@ const Result = () => {
   const {catagoryid}=useParams()
   
   const [results,setResults]=useState([])
+  const [isLoading, setisLoading] = useState(false)
 
     console.log(catagoryid)
 
@@ -24,6 +26,8 @@ const Result = () => {
           console.log(data)
         } catch (error) {
           console.log("error: ", error)
+        }finally{
+           setisLoading(false)
         }
         
       })()
@@ -32,10 +36,12 @@ const Result = () => {
   
   return (
     <Layout>
-        <div>
+      {isLoading ? <Loading/> :
+
+          <div>
           <h1 style={{padding:'30px'}}>Results</h1>
           <p style={{padding:'30px'}}>catagory / {categoryTitle}</p>
-          
+
           <hr />
 
           <div className={classes.product_container}>
@@ -47,7 +53,9 @@ const Result = () => {
 
           </div>
 
-        </div>
+          </div>
+      }
+        
     </Layout>
   )
 }

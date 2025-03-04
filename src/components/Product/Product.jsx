@@ -1,37 +1,54 @@
-import React, { useEffect } from 'react'
-import classes from './Product.module.css'
-import { useState } from 'react'
-import axios from 'axios'
-import ProductSlice from './ProductSlice'
+import React, { useEffect, useState } from 'react';
+import classes from './Product.module.css';
+import axios from 'axios';
+import ProductSlice from './ProductSlice';
+import Loading from '../Loading/Loading';
 
 const Product = () => {
-    const [product, setProduct] = useState([])
+    const [product, setProduct] = useState([]);
+    const [isloading, setisloading] = useState(true); 
 
     useEffect(() => {
-     (async () => {
-        try {
-            const fetch =await axios.get('https://api.escuelajs.co/api/v1/products')
-            setProduct(fetch.data) 
-        } catch (error) {
-            console.log("error", error);
-            
-        }
-      
-     })()
- }, [])
+        let isMounted = true; // Prevent state update on unmounted component
+        setisloading(true);
+        
+        (async () => {
+            try {
+                const fetch = await axios.get('https://api.escuelajs.co/api/v1/products');
+                if (isMounted) {
+                    setProduct(fetch.data);
+                }
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            } finally {
+                if (isMounted) {
+                    setisloading(false);
+                }
+            }
+        })();
 
-  return (
-    
-      <div className={classes.productWrapper}>
-        {product.length > 0 ? (
-      product.map((productt) => (
-        <ProductSlice key={productt.id} product={productt} />
-      ))
-    ) : (
-      <p>Loading products...</p> )}
-      </div>
-   
-  )
-}
+        return () => {
+            isMounted = false; // Cleanup function
+        };
+    }, []);
 
-export default Product
+    return (
+        <>
+            {isloading ? (
+                <Loading />
+            ) : (
+                <div className={classes.productWrapper}>
+                    {product.length > 0 ? (
+                        product.map((productt) => (
+                            <ProductSlice key={productt.id} product={productt} />
+                        ))
+                    ) : (
+                        <p>No products available.</p>
+                    )}
+                </div>
+            )}
+        </>
+    );
+};
+
+export default Product;
