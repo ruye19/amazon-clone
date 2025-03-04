@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -6,13 +6,15 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import classes from './Header.module.css';
 import HeaderUnder from './HeaderUnder';
 import flagg from '../../assets/image.png'
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
+import { DataContext } from '../dataProvider/DataProvider';
 
 
 
 const Header = () => {
+ const [{basket},dispatch]= useContext(DataContext)
   return (
-    <>
+    <div className={classes.fixed}>
     <div className={classes.headerWrapper}>
       {/* Amazon Logo */}
       <div className={classes.imageAmazon}>
@@ -67,14 +69,14 @@ const Header = () => {
         <Link  to ='/cart' className={classes.cart}>
           <AddShoppingCartIcon  size={100}/>
           <p>Cart</p>
-          <span>0</span>
+          <span>{basket.length}</span>
         </Link>
 
       </div>
     </div>
-          <HeaderUnder />
+      <HeaderUnder />
 
-    </>
+    </div>
     
   );
 };

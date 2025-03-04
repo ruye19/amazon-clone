@@ -142,7 +142,6 @@
     .headerWrapper{
         display: flex;
         flex-direction: column;
-        /* justify-content: space-between; */
         height: 20vh;
         overflow: hidden;
         align-items: center;
@@ -177,3 +176,8 @@
 
 }
 
+.fixed{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}

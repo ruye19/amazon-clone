@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import FormatCurrency from "../FormatCurrency/FormatCurrency";
 import { Link } from "react-router-dom";
 import classes from "./Product.module.css";
+import { DataContext } from "../dataProvider/DataProvider";
+import { Type } from "../../utility/action.type";
+import { CancelScheduleSend } from "@mui/icons-material";
 
 function ProductSlice({ product, flex }) {
+  const {image,title,id,price,description} =product;
+
+
+  const [State,dispatch] = useContext(DataContext)
+
+  const addToCart =( )=>{
+
+    dispatch({
+      type:Type.ADD_TO_BASKET,
+      item:{
+        image,title,id,price,description
+      }
+    })
+  }
+
+
+
   return (
     <div className={`${classes.productSlice} ${flex ? classes.productDetail : ""}`}>
       {/* Product Image */}
@@ -32,7 +52,7 @@ function ProductSlice({ product, flex }) {
         {flex ? (
           <button className={classes.buyNow}>Buy Now</button>
         ) : (
-          <button className={classes.addCart}>Add to Cart</button>
+          <button className={classes.addCart} onClick={addToCart}>Add to Cart</button>
         )}
       </div>
     </div>

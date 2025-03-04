@@ -19,7 +19,9 @@ const Result = () => {
     console.log(catagoryid)
 
     useEffect(() => {
+      
       (async () => {
+        setisLoading(true)
         try {
           const data= await axios.get(`https://api.escuelajs.co/api/v1/categories/${catagoryid}/products`)
           setResults(data.data)
@@ -36,11 +38,11 @@ const Result = () => {
   
   return (
     <Layout>
-      {isLoading ? <Loading/> :
+      {isLoading ? (<Loading />) :
 
           <div>
-          <h1 style={{padding:'30px'}}>Results</h1>
-          <p style={{padding:'30px'}}>catagory / {categoryTitle}</p>
+          <h1 style={{padding:'20px'}}>Results</h1>
+          <p style={{padding:'20px',fontSize:'21px'}}>Catagory / {categoryTitle}</p>
 
           <hr />
 
