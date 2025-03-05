@@ -11,7 +11,7 @@ const Cart = () => {
 
   // Calculate the total after basket has been initialized
   const total = basket?.reduce((amount, item) => {
-    return item.price + amount;
+    return item.price *  item.amount + amount;
   }, 0);
 
   console.log("Basket Data:", basket);
