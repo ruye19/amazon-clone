@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+
+    margin-top: 20px;
+    justify-content: center;
+}
+.container img{
+    width: 100%  ! important;
+
+}
+.cart_container{
+    padding: 20px;
+}
+.cart_container h2,p{
+    padding: 10px;
+}
+.cart_container hr{
+    margin: 10px;
+}
+.subtotal{
+    padding: 20px;
+    min-width: 260px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgb(193,193,193);
+    background: rgb(242 ,241,241);
+    border-radius: 5px;
+}
+.subtotal a{
+    text-align: center;
+    width: 100%;
+    border: none;
+    background-color: rgb(222, 157, 37);
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+
+}
+.subtotal a:hover{
+    background-color: rgb(181, 128, 29);
+}
+.subtotal > div, .subtotal span {
+    display: flex;
+    gap: 20px;
+}
+@media screen and (max-width:768px) {
+.container{
+    flex-direction: column;
+    order: 1;
+}
+    
+}
+/* .foutofour{
+    font-size: 26px;
+
+   
+  
+  
+} */

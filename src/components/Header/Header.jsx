@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SearchIcon from '@mui/icons-material/Search';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import classes from './Header.module.css';
 import HeaderUnder from './HeaderUnder';
@@ -67,7 +67,7 @@ const Header = () => {
         </Link>
 
         <Link  to ='/cart' className={classes.cart}>
-          <AddShoppingCartIcon  size={100}/>
+          <ShoppingCartOutlinedIcon  size={100}/>
           <p>Cart</p>
           <span>{basket.length}</span>
         </Link>

@@ -123,6 +123,9 @@
 .buyNow:hover {
     background-color: #db9224;
 }
+.noCart{
+    display: none;
+}
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {

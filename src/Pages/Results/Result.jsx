@@ -49,7 +49,7 @@ const Result = () => {
           <div className={classes.product_container}>
             {
               results?.map((product)=>(
-                <ProductSlice key={product.id} product={product}/>
+                <ProductSlice key={product.id} product={product} removeBtn={true}/>
               ))
             }
 

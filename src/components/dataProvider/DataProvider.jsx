@@ -1,23 +1,36 @@
-import React, { useReducer, createContext } from "react";
+import React, { createContext, useReducer } from "react";
+import { Type } from "../../utility/action.type";
 
-export const DataContext = createContext();
+// Initial State
+const initialState = {
+    basket: [],  // ✅ Ensure basket is initialized as an empty array
+    user: null
+};
 
-const initialState = { basket: [] }; // Example initial state
+// Reducer Function
 const reducer = (state, action) => {
     switch (action.type) {
-        case "ADD_TO_BASKET":
-            return { ...state, basket: [...state.basket, action.payload] };
+        case Type.ADD_TO_BASKET:
+            console.log("Adding item to basket:", action.item);
+            return {
+                ...state,
+                basket: [...state.basket, action.item], // ✅ Ensure items are added properly
+            };
+
         default:
             return state;
     }
 };
 
-export const DataProvider = ({ children }) => {  // ✅ Corrected 'children'
-    const value = useReducer(reducer, initialState);
+// Context Creation
+export const DataContext = createContext();
+
+export const DataProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
-        <DataContext.Provider value={value}>
-            {children}  {/* ✅ Corrected 'children' */}
+        <DataContext.Provider value={[state, dispatch]}>
+            {children}
         </DataContext.Provider>
     );
 };
