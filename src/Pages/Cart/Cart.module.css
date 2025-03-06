@@ -1,9 +1,9 @@
 .container {
     display: flex;
-    margin-top: 20px;
+   
     justify-content: space-between; /* Ensure proper spacing */
     align-items: flex-start; /* Align items at the top */
-    padding: 20px;
+   
     gap: 20px; /* Add spacing between cart and subtotal */
 }
 

@@ -41,7 +41,7 @@ const Cart = () => {
         <Layout>
             <div className={classes.cartTitle}>
                 <h2>Hello,</h2>
-                <p>Your shopping basket</p>
+                <h4>Your shopping basket</h4>
                 <hr />
             </div>
 
@@ -55,7 +55,10 @@ const Cart = () => {
                     ) : (
                         basket.map((item, index) => (
                             <section key={index} className={classes.cart_product}>
-                                <ProductSlice product={item} flex={true} removeBtn={false} />
+                                <ProductSlice product={item} flex={true} removeBtn={true} />
+
+
+
                                 <div className={classes.btn_container}>
                                     <button className={classes.btn} onClick={() => increment(item)}>
                                         <FaAngleUp size={20} />
