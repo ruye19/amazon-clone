@@ -16,6 +16,10 @@
     .cimg img{
         height: 60vh;
     }
-
+    .cimg{
+        width: 100vw; /* Ensure full width */
+        max-width: 100%; /* Prevent overflow */
+        object-fit: cover; /* Ensure it scales properly */
+    }
     
 }

@@ -41,15 +41,15 @@ const Result = () => {
       {isLoading ? (<Loading />) :
 
           <div>
-          <h1 style={{padding:'20px'}}>Results</h1>
-          <p style={{padding:'20px',fontSize:'21px'}}>Catagory / {categoryTitle}</p>
+          <h1 style={{padding:'10px'}}>Results</h1>
+          <p style={{padding:'1px',fontSize:'21px'}}>Catagory / {categoryTitle}</p>
 
           <hr />
 
           <div className={classes.product_container}>
             {
               results?.map((product)=>(
-                <ProductSlice key={product.id} product={product} removeBtn={true}/>
+                <ProductSlice key={product.id} product={product} removeBtn={false}/>
               ))
             }
 

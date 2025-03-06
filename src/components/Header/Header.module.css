@@ -6,7 +6,7 @@
     display: flex;
     background-color: black;
     color: white;
-    height: 11vh;
+    height: 14vh;
     align-items: center;
    width: 100%;  
    overflow: hidden;
@@ -94,7 +94,7 @@
 .cart span{
     position:absolute;
     font-weight: bold;
-    top: 10px;
+    top: 18px;
     left: 96.5%;
     font-size: 17px;
     background-color: #1a1a1a;
@@ -142,7 +142,7 @@
     .headerWrapper{
         display: flex;
         flex-direction: column;
-        height: 20vh;
+        height: 38vh;
         overflow: hidden;
         align-items: center;
 
@@ -173,6 +173,9 @@
     .cart span{
         display: none;
     }
+  
+    
+    
 
 }
 

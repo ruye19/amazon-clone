@@ -1,58 +1,91 @@
 import React, { useContext } from 'react';
 import Layout from '../../components/layout/Layout';
-import classes from './Cart.module.css'
+import classes from './Cart.module.css';
 import { DataContext } from '../../components/dataProvider/DataProvider';
 import ProductSlice from '../../components/Product/ProductSlice';
 import { Link } from 'react-router-dom';
 import FormatCurrency from '../../components/FormatCurrency/FormatCurrency'; // Assuming FormatCurrency is already created
+import { Type } from '../../utility/action.type';
+import { FaAngleUp } from "react-icons/fa6";
+import { IoChevronDown } from "react-icons/io5";
 
 const Cart = () => {
-  const [{ basket, user }, dispatch] = useContext(DataContext);  // Destructure basket after it's initialized
+    const [{ basket, user }, dispatch] = useContext(DataContext); 
 
-  // Calculate the total after basket has been initialized
-  const total = basket?.reduce((amount, item) => {
-    return item.price *  item.amount + amount;
-  }, 0);
+    // Debugging - Check if basket has items with price
+    console.log("Basket Data:", basket);
+    basket.forEach(item => console.log(`ID: ${item.id}, Price: ${item.price}, Amount: ${item.amount}`));
 
-  console.log("Basket Data:", basket);
+    // Calculate the total price of items in the basket
+    const total = basket?.reduce((amount, item) => {
+        return (item.price ?? 0) * item.amount + amount;  // ✅ Ensure price is not undefined
+    }, 0);
 
-  return (
-    <Layout>
-      <div className={classes.container}>
-        <div className={classes.cart_container}>
-        <h2>Hello,</h2>
-        <p>Your shopping basket</p>
-        <hr />
-        {
-          basket?.length === 0 ? (
-            <h3 className={classes.fourofour}>
-              Oops! No item in your cart <br />
-              Go grab something
-            </h3>
-          ) : (
-            basket?.map((item, index) => (
-              <ProductSlice key={index} product={item} flex={true} removeBtn={false} />
-            ))
-          )
-        }
-      </div>
-      
-      {basket?.length > 0 && (
-        <div className={classes.subtotal}>
-          <div >
-            <p>Subtotal ({basket.length} items)</p>
-            <FormatCurrency amount={total} />
-          </div>
-          <span>
-            <input type="checkbox" />
-            <small>This order contains a gift</small>
-          </span>
-          <Link to="/payments">Continue to checkout</Link>
-        </div>
-      )}
-      </div>
-    </Layout>
-  );
+    // Increase item quantity
+    const increment = (item) => {
+        dispatch({
+            type: Type.ADD_TO_BASKET,
+            item
+        });
+    };
+
+    // Decrease item quantity or remove if it's the last one
+    const decrement = (id) => {
+        dispatch({
+            type: Type.REMOVE_FROM_BASKET,
+            id // ✅ Fix: Pass only `id`
+        });
+    };
+
+    return (
+        <Layout>
+            <div className={classes.cartTitle}>
+                <h2>Hello,</h2>
+                <p>Your shopping basket</p>
+                <hr />
+            </div>
+
+            <div className={classes.container}>
+                <div className={classes.cart_container}>
+                    {basket?.length === 0 ? (
+                        <h3 className={classes.fourofour}>
+                            Oops! No item in your cart <br />
+                            Go grab something
+                        </h3>
+                    ) : (
+                        basket.map((item, index) => (
+                            <section key={index} className={classes.cart_product}>
+                                <ProductSlice product={item} flex={true} removeBtn={false} />
+                                <div className={classes.btn_container}>
+                                    <button className={classes.btn} onClick={() => increment(item)}>
+                                        <FaAngleUp size={20} />
+                                    </button>
+                                    <span>{item.amount}</span>
+                                    <button className={classes.btn} onClick={() => decrement(item.id)}>
+                                        <IoChevronDown size={20} />
+                                    </button>
+                                </div>
+                            </section>
+                        ))
+                    )}
+                </div>
+
+                {basket?.length > 0 && (
+                    <div className={classes.subtotal}>
+                        <div>
+                            <p>Subtotal ({basket.length} items)</p>
+                            <FormatCurrency amount={total} />
+                        </div>
+                        <span>
+                            <input type="checkbox" />
+                            <small>This order contains a gift</small>
+                        </span>
+                        <Link to="/payments">Continue to checkout</Link>
+                    </div>
+                )}
+            </div>
+        </Layout>
+    );
 };
 
 export default Cart;
