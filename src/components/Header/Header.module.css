@@ -120,6 +120,7 @@
 
 }
 .headerUnder a{
+    display: flex;
     color: white;
     text-decoration: none;
     margin: 0px 10px;
@@ -127,13 +128,18 @@
     font-weight: bolder;
 }
 .headerUnder ul li:first-child{
-  display: inline-flex;  
+  display: flex;  
+  padding-top: px;
   gap: 2px;
   align-items: center;
-  padding-left: 7px;
+  padding-left: 5px;
+}
+.headerUnder p{
+    padding-top: 5px;
 }
 .headerUnder ul li:hover{
-    border: 2px solid white;
+    border: 1px solid white;
+    padding: 4px;
 }
 .headerUnder ul li:first-child:hover{
     border: none;
