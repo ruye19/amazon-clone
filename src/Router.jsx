@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router'
 import { Routes } from 'react-router'
 import { Route } from 'react-router'
 import Landing from './Pages/Landing/Landing'
-import SignUp from './Pages/Auth/SignUp'
+import Auth from './Pages/Auth/Auth'
 import Payment from './Pages/Payment/Payment'
 import Orders from './Pages/Orders/Orders'
 import Cart from './Pages/Cart/Cart'
@@ -14,7 +14,7 @@ const Router = () => {
     <BrowserRouter>
     <Routes>
     <Route path='/' element={<Landing />} />
-    <Route path='/auth' element={<SignUp />} />
+    <Route path='/auth' element={<Auth />} />
     <Route path='/payment' element={<Payment />} />
 
     <Route path='/order' element={<Orders />} />
