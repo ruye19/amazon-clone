@@ -40,7 +40,7 @@ const Product = () => {
                 <div className={classes.productWrapper}>
                     {product.length > 0 ? (
                         product.map((productt) => (
-                            <ProductSlice key={productt.id} product={productt} removeBtn={false}  />
+                            <ProductSlice key={productt.id} product={productt} removeBtn={false}   removedes={false}/>
                         ))
                     ) : (
                         <p>No products available.</p>

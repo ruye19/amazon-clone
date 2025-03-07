@@ -5,7 +5,7 @@ import classes from "./Product.module.css";
 import { DataContext } from "../dataProvider/DataProvider";
 import { Type } from "../../utility/action.type";
 
-function ProductSlice({ product, flex, removeBtn }) {
+function ProductSlice({ product, flex, removeBtn, removedes }) {
   if (!product) {
     return <p>Error: Product data is missing!</p>;
   }
@@ -39,9 +39,11 @@ function ProductSlice({ product, flex, removeBtn }) {
         <h3>{title}</h3>
 
         {/* Show Description ONLY when `flex` is true */}
-        <p className={`${classes.description} ${flex ? classes.show : ""}`}>
+        {
+        removedes && <p className={`${classes.description} ${flex ? classes.show : ""}`}>
           {description}
         </p>
+        }
 
         <div className={classes.price}>
           <FormatCurrency amount={price} />

@@ -35,7 +35,7 @@
 .catagoryWrapper{
   display: grid;
   position: relative;
-  margin-top:-10% ;
+  margin-top:-19% ;
   grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     place-items: center;

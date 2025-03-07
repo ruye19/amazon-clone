@@ -47,7 +47,7 @@ const ProductDetail = () => {
 
           {
           productState ? (
-            <ProductSlice product={productState} flex={true} removeBtn={false}/>
+            <ProductSlice product={productState} flex={true} removeBtn={false} removedes={true}/>
           ) : (
             <p>Loading...</p>
           )

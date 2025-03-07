@@ -29,12 +29,12 @@
 }
 
 /* Ensure images don't shrink */
-.cart_product img {
+/* .cart_product img {
     width: 100px;
     height: 100px;
     margin: 10px;
     object-fit: cover;
-}
+} */
 
 /* Button container aligned to the side */
 .btn_container {
